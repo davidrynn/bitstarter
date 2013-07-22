@@ -2,9 +2,21 @@
 var fs = require ("fs");
 var express = require('express');
 var app = express();
-fs.readfile("index.html", "utf-8", function (error, data) { console.log(data); 
-						      });
-
+var fileName = "index.html";
+fs.exists(fileName, function (exists){
+    if (exists){
+	fs.stat(fileName, function(error, stats){
+	    fs.open(fileName, "r", function(error, fd){
+		var buffer = new Buffer(stats.size);
+		fs.read(fd, buffer, 0, buffer.length, null, function (error, bytesRead, buffer) {
+		    var data = buffer.toString("utf8", 0, buffer.length);
+		    console.log(data);
+		    fs.close(fd);
+		});
+	    });
+	});
+    }
+});
 // var buff = buf.toString(fs.readFileSync(filename));
 // console.log(buff);
 
