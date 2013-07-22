@@ -2,8 +2,7 @@
 var fs = require ("fs");
 var express = require('express');
 var app = express();
-var filename = "index.html";
-fs.readfile(filename, "utf-8", function (error, data) { console.log(data); 
+fs.readfile("index.html", "utf-8", function (error, data) { console.log(data); 
 						      });
 
 // var buff = buf.toString(fs.readFileSync(filename));
