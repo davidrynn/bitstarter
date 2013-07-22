@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+var buff = buf.toString(fs.readFileSync('index.html'));
+console.log(buff);
+
 app.use(express.logger());
 
 app.get('/', function(request, response) {
