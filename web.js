@@ -8,7 +8,7 @@ var fileName = "index.html";
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-    response.send(fs,readFilesync('index.html'));
+    response.send(fs.readFilesync('index.html'));
 });
 
 var port = process.env.PORT || 5000;
