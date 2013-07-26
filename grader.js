@@ -23,9 +23,10 @@ References:
 var fs = require('fs');
 var program = require('commander');
 var cheerio = require('cheerio');
+var rest = require('restler');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
-
+var URL_DEFAULT = "http://rocky-mesa-3403.herokuapp.com/";
 var assertFileExists = function(infile) {
     var instr = infile.toString();
     if(!fs.existsSync(instr)) {
@@ -54,24 +55,48 @@ var checkHtmlFile=function(htmlfile, checksfile) {
     return out;
 };
 
+var checkUrl=function(url, checksurl) {
+    $ = cheerio.load(url);
+    var checks = loadChecks(checksurl).sort();
+    var out ={};
+    for(var ii in checks){
+	var present = $(checks[ii]).length >0;
+    out[check[ii]]=present;
+    }
+var outJson = JSON.stringify(out, null, 4);
+console.log(outJson);
+return out;
+};
+
 var clone = function(fn) {
     // Workaround for commander.js issue.
     // http://stachoverflow.com/a/6772648
     return fn.bind({});
-};
+}
 
 if(require.main == module) {
     program
 	.option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
+	.option('-u, --url <url>', 'path to url', URL_DEFAULT)
 	.option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
 	.parse(process.argv);
+
+    if(program.url !==URL_DEFAULT){
+	rest.get(program.url).on('complete', function(result){
+	    if(result instanceof Error) {
+		sys.puts('Error: ' +result.message);
+		this.retry(5000);// try again after 5 sec
+	    } else {
+		console.log("Checking " + program.url);
+		checkUrl(result, program.checks);
+	    }
+	});
+    } else {
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
-} else {
-    exports.checkHtmlFile = checkHtmlFile;
-}
-    
-
-
+    }
+    } else {
+	exports.checkHtmlFile = checkHtmlFile;
+    }
 
