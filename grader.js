@@ -61,7 +61,7 @@ var checkUrl=function(url, checksurl) {
     var out ={};
     for(var ii in checks){
 	var present = $(checks[ii]).length >0;
-    out[check[ii]]=present;
+    out[checks[ii]]=present;
     }
 var outJson = JSON.stringify(out, null, 4);
 console.log(outJson);
@@ -99,4 +99,3 @@ if(require.main == module) {
     } else {
 	exports.checkHtmlFile = checkHtmlFile;
     }
-
