@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset = "utf-8">
-    <title>My First Bitstarter</title>
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Wordapik - Create a story one word at a time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
@@ -18,30 +18,37 @@
 @media (min-width: 980px){
 body {
 padding-top: 60px;
-}//body end
+}
 .linediv-l {
 border-right: 1px white solid;
 }
 .linediv-r {
 border-left: 1px white solid;
 }
-}//@media end
+}
 
 /* Landscape phones and down */
 @media (max-width: 480px){
       .copy{
       padding: 2.5% 10%;
       }
-      .linediv-l {
+.linediv-l {
 border-bottom: 1px white solid;
-      }
+}
 .linediv-r{
 border-top: 1px white solid;
 }
-}//@media end
+}
 
 /* All form factors */
 
+//I added this to change navbar color.
+.navbar-inner {
+background-color:#a6a6a6;
+background-image: none;
+background-repeat: no-repeat;
+filter: none;
+}
 /* Main body and headings */
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -112,7 +119,7 @@ color: #ccccff;
 	<span class="icon-bar"></span>
 	<span class="icon-bar"></span>
       </button>
-      <a class="brand" href="#">Bitstarter</a>
+      <a class="brand" href="#">Wordatik</a>
       <div class="nav-collapse collapse"></div>
       <ul class = "nav">
 	<li class="active"><a href="#">Home</a></li>
@@ -163,7 +170,7 @@ color: #ccccff;
 	    </div>
 	    <div class="span4">
 	      <div class="linediv-c">
-		<h3>$0</h3><p> of $1,000</p>
+		<h3>$5</h3><p> of $120</p>
 	      </div>
 	    </div>
 	    <div class="span4">
@@ -177,8 +184,8 @@ color: #ccccff;
 	  <!-- Bootstrap progress bar -->
 	  <!--http://twitter.github.io/bootstrap/components.html#progress-->
 	  <div class="thermometer progress active">
-	    <div class="bar bar-success" style="width: 1%;"></div>
-	    <div class="bar bar-warning" style="width: 90%;"></div>
+	    <div class="bar bar-success" style="width: 4%;"></div>
+	    <div class="bar bar-warning" style="width: 96%;"></div>
 	  </div>
 	</div>
 	<div class="span6 offset3 order">
@@ -248,7 +255,7 @@ color: #ccccff;
 	    What does FAQ stand for?
 	    </a>
 	  </div>
-	<div id="collapseOne" class"accordion-body collapse">
+	<div id="collapseOne" class="accordion-body collapse">
 	  <div class="accordion-inner">
 	    Frequently Asked Question.
 	    </div>
