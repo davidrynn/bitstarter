@@ -42,7 +42,7 @@ border-top: 1px white solid;
 
 /* All form factors */
 
-//I added this to change navbar color.
+/*I added this to change navbar color. */
 .navbar-inner {
 background-color:#a6a6a6;
 background-image: none;
@@ -105,6 +105,72 @@ font-size: 11px;
 color: #ccccff;
 }
       </style>
+
+
+<!-- my javascript test-->
+<script>
+
+/*function Story(word){
+this.word
+console.log("this word: " + this.word);
+this.print =function(){
+
+var s =this.word = " ";
+return s;
+}
+console.log("this.print:" + this.print);
+}
+*/
+var sentence =[];
+console.log("Sentence is this long: " + sentence.length);
+window.onload = init;
+
+function init(){
+var submitButton = document.getElementById("submitButton");
+submitButton.onclick = getWord;
+var resetButton = document.getElementById("resetButton");
+resetButton.onclick = clearAll;
+}
+
+
+function clearAll(){
+sentence.length = 0;
+var result =document.getElementById("result");
+result.innerHTML =" ";
+}
+
+function getWord(){
+var wordInput = document.getElementById("word");
+var word = wordInput.value;
+console.log("wordInput.value: " + wordInput.value);
+if (word == null || word =="") {
+alert("Please enter a word");
+return;
+}
+else{
+//var story = new Story(word);
+sentence.push(word);
+var words = document.getElementById("words");
+//addWordToSentence(word);
+
+var result = document.getElementById("result");
+result.innerHTML +=word + " ";
+
+var theForm = document.getElementById("theForm");
+theForm.reset();
+
+}
+}
+
+/*function addWordToSentence(word){
+var sentence = document.getElementById("sentence");
+var li =document.createElement("li");
+li.innerHTML = word;
+sentence.appendChild(li);
+}
+*/
+</script>
+
       </head>
 <body>
 
@@ -200,7 +266,26 @@ color: #ccccff;
 	  <button class="btn btn-facebook"><i class="icon-facebook"></i>| Facebook</button>
 	</div>
       </div>
-  </div>	  
+  </div>
+
+
+<!-- section I added as a test to build story -->
+<h1> Story Builder </h1>
+<form id = "theForm">
+<label for="word"> Write word: </label>
+<input id="word" type="text" size="50" required>
+<br>
+<input type="button" id="submitButton" value="Add word!"><br>
+<input type="button" id="resetButton" align="left" value="reset"><br>
+</form>
+<ul id="sentence">
+</ul>
+<h2>Sentence so far...</h2>
+<div id="result">
+</div>
+<!-- end of my sechtion -->
+
+
 <!-- Beyond this part the marketing copy begins. -->
 <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-align -->
 <!-- https://twitter.github.io/bootstrap/base0css.html#images -->
