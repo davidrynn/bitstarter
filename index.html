@@ -176,7 +176,7 @@ sentence.appendChild(li);
 
 <!-- Mobile-friendly navbar adapted from example. -->
 <! --http://twitter.github.io/bootstrap/examples/starter-template.html -->
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-fixed-top">
   <div class = "navbar-inner">
     <div class = "container">
       <button type="button" class="btn btn-navbar"
@@ -186,12 +186,15 @@ sentence.appendChild(li);
 	<span class="icon-bar"></span>
       </button>
       <a class="brand" href="#">Wordatik</a>
+      <form class="navbar-form pull-right">
+	<input type="text" class="form-control" style="width: 200px;">
+	<button type="submit" class="btn btn-default navbar-btn">Sign in</button></form>
       <div class="nav-collapse collapse"></div>
       <ul class = "nav">
 	<li class="active"><a href="#">Home</a></li>
 	<li><a href="#about">About</a><li>
-	  <li><a href="#contact">Contact</a></li>
-	  </ul>
+	<li><a href="#contact">Contact</a></li>
+      </ul>
       </div><!-- /.nav-collapse -->
     </div>
 </div>
@@ -337,12 +340,16 @@ sentence.appendChild(li);
 	<div class="accordion-heading">
 	  <a class="accordion-toggle" data-toggle="collapse"
 	     data-parent="#accordion2" href="#collapseOne">
-	    What does FAQ stand for?
+	    What's Wordatik?
 	    </a>
 	  </div>
 	<div id="collapseOne" class="accordion-body collapse">
 	  <div class="accordion-inner">
-	    Frequently Asked Question.
+	    It's simple, anyone can participate to make a story.<br>
+	    Anyone can add a word and the community votes on which word is best<br>
+	    and poof!  -That word is permanently added to the story!
+
+
 	    </div>
 	  </div>
 	</div>
@@ -350,12 +357,12 @@ sentence.appendChild(li);
 	<div class="accordion-heading">
 	  <a class="accordion-toggle" data-toggle="collapse"
 	     data-parent="#accordion2" href="#collapseTwo">
-	    What's a Frequently Asked Question?
+	    Why does it have such a stupid name?
 	    </a>
 	  </div>
 	<div id="collapseTwo" class="accordion-body collapse">
 	  <div class="accordion-inner">
-	    A question which is commonly asked by users.
+	    Because every other name is taken. Yey!
 	    </div>
 	</div>
       </div>
