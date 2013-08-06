@@ -191,7 +191,7 @@ sentence.appendChild(li);
       </button>
       <a class="brand" href="#">Wordatik</a>
       <form class="navbar-form pull-right">
-	<input type="text" class="form-control" style="width: 200px;">
+<!--	<input type="text" class="form-control" style="width: 200px;">  removing input for now bc looks like search function -->
 	<button type="submit" class="btn btn-default navbar-btn">Sign in</button></form>
       <div class="nav-collapse collapse"></div>
       <ul class = "nav">
@@ -213,7 +213,7 @@ sentence.appendChild(li);
 <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
 <div class="row-fluid heading">
       <div class = "span12">
-	<h1>Wordatik</h1>
+	<h1>Wordatik: Developtment Version</h1>
       </div>
 </div>
 <div class = "row-fluid subheading">
@@ -225,14 +225,15 @@ sentence.appendChild(li);
 </div>
   <div class="row-fluid pitch">
     <div class="span5 offset1 video">
-      <img class="img-polaroid" src="http://www.davidrynn.com/images/self-writing.gif">
+      <img class="img-polaroid" alt="self-writing gif" src="http://www.davidrynn.com/images/self-writing.gif">
 <!--src="http://placehold.it/480x300">-->
       </div>
 
 <!-- We define a new 'actions' div to conatin statistic, order, and share buttons.-->
       <div class = "span5 actions">
+	<div class="row-fluid">
 	<div class="span8 offset2">
-	  <div class="statistics">
+	  <div class="row-fluid statistics">
 	    <div class="span4">
 	    <!-- linediv-l and linediv-r give dividing lines that look
 		 different in horizontal and vertical layouts, illustrating 
@@ -253,6 +254,7 @@ sentence.appendChild(li);
 	    </div>
 	  </div>
 	</div>
+	<div class="row-fluid">
 	<div class="span10 offset1">
 	  <!-- Bootstrap progress bar -->
 	  <!--http://twitter.github.io/bootstrap/components.html#progress-->
@@ -261,11 +263,15 @@ sentence.appendChild(li);
 	    <div class="bar bar-warning" style="width: 96%;"></div>
 	  </div>
 	</div>
+	</div>
+	<div class="row-fluid">
 	<div class="span6 offset3 order">
 	  <!-- Standard Bootstrap button. -->
 	  <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
 	  <button class="btn btn-success btn-large">Preorder</button>
 	</div>
+	</div>
+	<div class="row-fluid">
 	<div class="span8 offset2 social">
 	  <!-- Social buttons are not includedin default Bootstrap.-->
 	  <!-- See: htp://noizwaves.github.io/bootstrap-social-buttons-->
@@ -274,7 +280,8 @@ sentence.appendChild(li);
 	</div>
       </div>
   </div>
-
+</div>
+</div>
 
 <!-- section I added as a test to build story -->
 <h1> Story Builder </h1>
@@ -290,7 +297,7 @@ sentence.appendChild(li);
 <h2>Sentence so far...</h2>
 <div id="result">
 </div>
-<!-- end of my sechtion -->
+<!-- end of my section -->
 
 
 <!-- Beyond this part the marketing copy begins. -->
@@ -349,11 +356,9 @@ sentence.appendChild(li);
 	  </div>
 	<div id="collapseOne" class="accordion-body collapse">
 	  <div class="accordion-inner">
-	    It's simple, anyone can participate to make a story.<br>
+	    It's a way to make a story word by word.<br>
 	    Anyone can add a word and the community votes on which word is best<br>
-	    and poof!  -That word is permanently added to the story!
-
-
+	    and poof!  -That word is added to the story!
 	    </div>
 	  </div>
 	</div>
