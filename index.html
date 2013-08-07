@@ -44,7 +44,7 @@ border-top: 1px white solid;
 
 /*I added this to change navbar color. */
 .navbar-inner {
-background-color:#EEF0F8;
+background-color:#F7F8FC;
 background-image: none;
 background-repeat: no-repeat;
 filter: none;
@@ -53,10 +53,53 @@ filter: none;
 color: #2F2F4F;
 }
 
+/* Adding sign in styling -dr*/
+.sign-in form {
+margin: 0px;
+margin: 0px;
+margin: 0px;
+margin: 0px;
+}
+
+.sign-in fieldset{
+padding-top: 10px;
+padding-right: 10px; 
+padding-bottom: 10px;
+padding-left: 10px;
+}
+
+.sign-in small{
+line-height: 100%;
+overflow: auto;
+clear: both;
+font-size: 11px;
+border-top-color: #D6D8D9;
+border-top-width: 1px;
+border-top-style: solid;
+display: block;
+background-image: none;
+background-attachment: scroll;
+background-repeat: repeat;
+background-position-x: 0%;
+background-position-y: 0%;
+background-size: auto;
+background-origin: padding-box;
+background-clip: border-box;
+background-color: #EEF0F8;
+}
+
+.sign-in small a {
+padding-top: 4px;
+padding-right: 10px;
+padding-bottom: 4px;
+padding-right: 10px;
+clear: none;
+}
+
+
 /* Main body and headings */
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-background-color:#F7FAFF;
 	
 }
 
@@ -227,9 +270,39 @@ sentence.appendChild(li);
 	<span class="icon-bar"></span>
       </button>
       <a class="brand" href="#">Wordatic</a>
-      <form class="navbar-form pull-right">
-<!--	<input type="text" class="form-control" style="width: 200px;">  removing input for now bc looks like search function -->
-	<button type="submit" class="btn btn-default navbar-btn">Sign in</button></form>
+      <!--      <form class="navbar-form pull-right"> test remove for sign-->
+      <!--	<input type="text" class="form-control" style="width: 200px;">  removing input for now bc looks like search function -->
+      <!--	<button type="submit" class="btn btn-default navbar-btn dropdown" href="/sign-in" data-toggle="dropdown">Sign in</button></form> -->
+      <div class="dropdown pull-right sign-in">
+	<a class="dowpdown-toggle" href="/signin" data-toggle="dropdown">Sign in</a>
+	<div class = "dropdown-menu">
+	  <form action="/signin" method="post">
+	    <fieldset>
+	      <label>
+		<input name="username" type="email" required="" placeholder="yourname@example.com" value=""/>
+	      </label>
+	      <label>
+		<input name ="password" type="password" required="" placeholder="Password" />
+	      </label>
+	      <label class = "checkbox pull-left no-wrap">
+		<span data-original-title="test" rel="tooltip">
+		<input name = "remember" type="checkbox" />
+		Remember me
+		</span>
+	      </label>
+
+	      <button class="btn btn-success pull-right" type="submit">Sign in</button>
+	    </fieldset>
+
+	    <small>
+	      <a class="pull-left" href="/reset_passowrd">Forgot password</a>
+	      <a class="pull-right" href="/signin">Create an account</a>
+	    </small>
+
+	</form>
+</div><!--end dropdown -->
+</div><!-- end dropdown pull-right-->
+<!-- </form> -->
       <div class="nav-collapse collapse"></div>
       <ul class = "nav">
 	<li class="active"><a href="#">Home</a></li>
@@ -262,7 +335,7 @@ sentence.appendChild(li);
 </div>
   <div class="row-fluid">
     <div class="span video"> <!-- offset1 video"> -->
-      <img class="img-polaroid" alt="self-writing gif" src="http://www.davidrynn.com/images/self-writing.gif">
+      <img class="img" alt="self-writing gif" src="http://www.davidrynn.com/images/self-writing.gif" onload = "this.width/=2; this.onload=null;">
 <!--src="http://placehold.it/480x300">-->
       </div>
 
