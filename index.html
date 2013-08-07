@@ -44,7 +44,7 @@ border-top: 1px white solid;
 
 /*I added this to change navbar color. */
 .navbar-inner {
-background-color:#EEF0F8;
+background-color:#F7F8FC;
 background-image: none;
 background-repeat: no-repeat;
 filter: none;
@@ -54,8 +54,46 @@ color: #2F2F4F;
 }
 
 /* Adding sign in styling -dr*/
+.sign-in form {
+margin: 0px;
+margin: 0px;
+margin: 0px;
+margin: 0px;
+}
+
 .sign-in fieldset{
-padding: 10px 10px 10px 10px;
+padding-top: 10px;
+padding-right: 10px; 
+padding-bottom: 10px;
+padding-left: 10px;
+}
+
+.sign-in small{
+line-height: 100%;
+overflow: auto;
+clear: both;
+font-size: 11px;
+border-top-color: #D6D8D9;
+border-top-width: 1px;
+border-top-style: solid;
+display: block;
+background-image: none;
+background-attachment: scroll;
+background-repeat: repeat;
+background-position-x: 0%;
+background-position-y: 0%;
+background-size: auto;
+background-origin: padding-box;
+background-clip: border-box;
+background-color: #EEF0F8;
+}
+
+.sign-in small a {
+padding-top: 4px;
+padding-right: 10px;
+padding-bottom: 4px;
+padding-right: 10px;
+clear: none;
 }
 
 
@@ -237,29 +275,29 @@ sentence.appendChild(li);
       <!--	<button type="submit" class="btn btn-default navbar-btn dropdown" href="/sign-in" data-toggle="dropdown">Sign in</button></form> -->
       <div class="dropdown pull-right sign-in">
 	<a class="dowpdown-toggle" href="/signin" data-toggle="dropdown">Sign in</a>
-      <div class = "dropdown-menu">
-	<form action="/signin" method="post">
-	  <fieldset>
-	    <label>
-	      <input name="username" type="email" required="" placeholder="yourname@example.com" value=""/>
-	    </label>
-	    <label>
-	      <input name ="password" type="password" required="" placeholder="Password" />
-	    </label>
-	    <label class = "checkbox pull-left no-wrap">
-	      <span data-original-title="test" rel="tooltip">
+	<div class = "dropdown-menu">
+	  <form action="/signin" method="post">
+	    <fieldset>
+	      <label>
+		<input name="username" type="email" required="" placeholder="yourname@example.com" value=""/>
+	      </label>
+	      <label>
+		<input name ="password" type="password" required="" placeholder="Password" />
+	      </label>
+	      <label class = "checkbox pull-left no-wrap">
+		<span data-original-title="test" rel="tooltip">
 		<input name = "remember" type="checkbox" />
 		Remember me
-	      </span>
-	    </label>
+		</span>
+	      </label>
 
-	    <button class="btn btn-success pull-right" type="submit">Sign in</button>
-	  </fieldset>
+	      <button class="btn btn-success pull-right" type="submit">Sign in</button>
+	    </fieldset>
 
-	  <small>
-	    <a class="pull-left" href="/reset_passowrd">Forgot password</a>
-	    <a class="pull-right" href="/signin">Create a writer account</a>
-	  </small>
+	    <small>
+	      <a class="pull-left" href="/reset_passowrd">Forgot password</a>
+	      <a class="pull-right" href="/signin">Create an account</a>
+	    </small>
 
 	</form>
 </div><!--end dropdown -->
