@@ -5,6 +5,7 @@
     <title>Wordatic - Create a story one word at a time</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="http://marcoceppi.github.io/bootsrap-glyphicons/css/bootstrap.icon-large.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
@@ -338,11 +339,10 @@ sentence.appendChild(li);
       <img class="img" alt="self-writing gif" src="http://www.davidrynn.com/images/self-writing.gif" ><!--onload = "this.width/=2; this.onload=null;">-->
 <!--src="http://placehold.it/480x300">-->
       </div>
-
-    <!-- section I added as a test to build story -->
-    <div class="row-fluid pitch">
+    <!-- section I added as a test to build story ->
+    <div class="row-fluid section1">
       <div class = "span5" id="storyBuilder">
-<!--	<h1> Story Builder </h1> -->
+
 	<form id = "theForm">
 	  <label for="word"> Write-a-word: </label>
 	  <input id="word" type="text" size="50" required>
@@ -352,11 +352,57 @@ sentence.appendChild(li);
 	</form>
 	<ul id="sentence">
 	</ul>
-<!--	<h2>Sentence so far..</h2> -->
+
 	<div id="result">
 	</div>
-     
-    </div>
+</div><!-- end of story builder->
+-->
+
+<div class="row-fluid">
+  <div class="span5 copy section1">
+    <table class="table table-condensed">
+      <tr>
+	<th>He</th>
+	<th>was</th>
+	<th>often</th>
+	<th>cranky</th>
+	<th>but</th>
+	<th>generally</th>
+	<th>easy</th>
+	<th>going.</th>
+	</tr>
+      <tr>
+      <td></td>
+      <td>   </td>
+      <td>   </td>
+      <td>   </td>
+      <td>   </td>
+      <td>   </td>
+      <td><i class="icon-large icon-up-arrow"></i>well</td>
+      <td>meaning.</td>
+
+      </tr>
+      
+
+
+      </table>
+    </div><!-- end of first section showing demo of sentence builder-->
+       <div class="span5 offset1 copy copy-right well">
+
+       <p>Once upon a time there were three dragons living together in a big cave.  
+	   They were siblings.  Humphrey was the oldest dragon.  <span style="background-color: #FFFF00">
+	   He was often cranky 
+	   but generally easy going.</span>  There was Persephone who enjoyed gardening, a 
+	   difficult task for a dragon and window shopping, also a difficult task for 
+	   a dragon.  And lastly was Shoe.  Shoe was the youngest and most rambunctious 
+	   dragon.  He felt is was the task of every dragon to terrorize neighboring 
+	   villages, burn things for no particular reason and fly all over the place.
+	   He was also only ten feet long and couldn't fly so much as glide.  He was
+	   called Shoe because he was only a little bit bigger than Grandpa Ned's left
+	   foot, about the size of his foot if he wore a shoe.  As you can imagine, 
+	   the cave was rather cramped.</p>
+    </div><!-- end of text para -->
+</div><!-- end of fluid row text-->
     <!-- end of my section -->
 
 
