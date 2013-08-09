@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset = "utf-8">
+    <title>Wordatic - Create a story one word at a time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type ="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,700italic,300,400,600,700,800" 
+	  rel="stylesheet" type="text/css">
+    <style type="text/css">
+
+/* Large desktop */
+@media (min-width: 980px){
+body {
+padding-top: 60px;
+}
+.linediv-l {
+border-right: 1px white solid;
+}
+.linediv-r {
+border-left: 1px white solid;
+}
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px){
+      .copy{
+      padding: 2.5% 10%;
+      }
+.linediv-l {
+border-bottom: 1px white solid;
+}
+.linediv-r{
+border-top: 1px white solid;
+}
+}
+
+/* All form factors */
+
+/*I added this to change navbar color. */
+.navbar-inner {
+background-color:#F7F8FC;
+background-image: none;
+background-repeat: no-repeat;
+filter: none;
+}
+.navbar .nav > li> a {
+color: #2F2F4F;
+}
+
+/* Adding sign in styling -dr*/
+.sign-in form {
+margin: 0px;
+margin: 0px;
+margin: 0px;
+margin: 0px;
+}
+
+.sign-in fieldset{
+padding-top: 10px;
+padding-right: 10px; 
+padding-bottom: 10px;
+padding-left: 10px;
+}
+
+.sign-in small{
+line-height: 100%;
+overflow: auto;
+clear: both;
+font-size: 11px;
+border-top-color: #D6D8D9;
+border-top-width: 1px;
+border-top-style: solid;
+display: block;
+background-image: none;
+background-attachment: scroll;
+background-repeat: repeat;
+background-position-x: 0%;
+background-position-y: 0%;
+background-size: auto;
+background-origin: padding-box;
+background-clip: border-box;
+background-color: #EEF0F8;
+}
+
+.sign-in small a {
+padding-top: 4px;
+padding-right: 10px;
+padding-bottom: 4px;
+padding-right: 10px;
+clear: none;
+}
+
+
+/* Main body and headings */
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	
+}
+
+.heading, .subheading {
+font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+text-align: center;
+}
+p.lead {
+padding-top: 1.5%;
+font-size: 24px;
+line-height: 30px;
+}
+p {
+font-size: 18px;
+line-height:24px;
+}
+
+/* Video pitch and Action */
+.pitch {
+padding: 2.5% 0%;
+}
+.order{
+padding: 2% 0%;
+}
+.actions {
+background-color: #9AA5B0;
+padding: 3% 0%;
+}
+
+.storyBuilder{
+padding: 3% 0%;
+align: center;
+}
+.video, .thermometer, .order, .social {
+text-align: center;
+}
+.statistics h3, .statistics p {
+color: white;
+}
+
+
+
+/*Marketing Copy and Footer */
+.copy{
+padding-top: 2.5%;
+padding-bottom: 2.5%;
+text-align: justify;
+}
+.asset{
+padding: 2.5% 0%;
+}
+.footer{
+color:#CCCCCC;
+text-align: center;
+}
+.footer p {
+font-size: 11px;
+}
+.footer a{
+color: #ccccff;
+}
+
+/* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */
+div.addthis_toolbox {
+width:180px;
+margin: 0 auto;
+
+}
+
+
+      </style>
+
+
+<!-- my javascript test-->
+<script>
+
+/*function Story(word){
+this.word
+console.log("this word: " + this.word);
+this.print =function(){
+
+var s =this.word = " ";
+return s;
+}
+console.log("this.print:" + this.print);
+}
+*/
+var sentence =[];
+console.log("Sentence is this long: " + sentence.length);
+window.onload = init;
+
+function init(){
+var submitButton = document.getElementById("submitButton");
+submitButton.onclick = getWord;
+var resetButton = document.getElementById("resetButton");
+resetButton.onclick = clearAll;
+}
+
+
+function clearAll(){
+sentence.length = 0;
+var result =document.getElementById("result");
+result.innerHTML =" ";
+}
+
+function getWord(){
+var wordInput = document.getElementById("word");
+var word = wordInput.value;
+console.log("wordInput.value: " + wordInput.value);
+if (word == null || word =="") {
+alert("Please enter a word");
+return;
+}
+else{
+//var story = new Story(word);
+sentence.push(word);
+var words = document.getElementById("words");
+//addWordToSentence(word);
+
+var result = document.getElementById("result");
+result.innerHTML +=word + " ";
+
+var theForm = document.getElementById("theForm");
+theForm.reset();
+
+}
+}
+
+/*function addWordToSentence(word){
+var sentence = document.getElementById("sentence");
+var li =document.createElement("li");
+li.innerHTML = word;
+sentence.appendChild(li);
+}
+*/
+</script>
+
+<!-- /*bitcoin script*/ -->
+<script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+
+<script type = "text/javascript">
+
+  var _gaq = _gaq||[];
+  _gaq.push(['_setAccount', 'UA-43000023-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function(){
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async=true;
+  ga.src = ('https:' == document.location.protocol ? 'https://sll' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      </head>
+<body>
+
+<!-- Mobile-friendly navbar adapted from example. -->
+<! --http://twitter.github.io/bootstrap/examples/starter-template.html -->
+<div class="navbar navbar-fixed-top">
+  <div class = "navbar-inner">
+    <div class = "container">
+      <button type="button" class="btn btn-navbar"
+	      data-toggle="collapse" data-target=".nav-collapse">
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+      </button>
+      <a class="brand" href="#">Wordatic</a>
+      <!--      <form class="navbar-form pull-right"> test remove for sign-->
+      <!--	<input type="text" class="form-control" style="width: 200px;">  removing input for now bc looks like search function -->
+      <!--	<button type="submit" class="btn btn-default navbar-btn dropdown" href="/sign-in" data-toggle="dropdown">Sign in</button></form> -->
+      <div class="dropdown pull-right sign-in">
+	<a class="dowpdown-toggle" href="/signin" data-toggle="dropdown">Sign in</a>
+	<div class = "dropdown-menu">
+	  <form action="/signin" method="post">
+	    <fieldset>
+	      <label>
+		<input name="username" type="email" required="" placeholder="yourname@example.com" value=""/>
+	      </label>
+	      <label>
+		<input name ="password" type="password" required="" placeholder="Password" />
+	      </label>
+	      <label class = "checkbox pull-left no-wrap">
+		<span data-original-title="test" rel="tooltip">
+		<input name = "remember" type="checkbox" />
+		Remember me
+		</span>
+	      </label>
+
+	      <button class="btn btn-success pull-right" type="submit">Sign in</button>
+	    </fieldset>
+
+	    <small>
+	      <a class="pull-left" href="/reset_passowrd">Forgot password</a>
+	      <a class="pull-right" href="/signin">Create an account</a>
+	    </small>
+
+	</form>
+</div><!--end dropdown -->
+</div><!-- end dropdown pull-right-->
+<!-- </form> -->
+      <div class="nav-collapse collapse"></div>
+      <ul class = "nav">
+	<li class="/index.html"><a href="#">Home</a></li>
+	<li><a href="active">About</a><li>
+	<li><a href="#contact">Contact</a></li>
+      </ul>
+      </div><!-- /.nav-collapse -->
+    </div>
+</div>
+</div>
+
+<!-- We use row-fluid inside containers to achieve a resizable layout. -->
+<!-- blogs.endjin.com/2013/04/tips-for-implementing-responsive-designs-using-bootstrap/ -->
+<!-- http://stackoverflow.com/a/12270322 -->
+<div class="container">
+<!-- Font and paired font of .heading/.subheading and body from Google Fonts -->
+<!-- www.google.com/fonts/specimen/Ubuntu -->
+<!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
+<div class="row-fluid heading">
+      <div class = "span12">
+	<h1>Wordatic: Development Version</h1>
+      </div>
+</div>
+<div class = "row-fluid subheading">
+  <div class="span">
+    <!-- Special typography from Bootstrap for lead paragraph.-->
+    <!-- http://twitter.github.io/bootstrap/base-css.html#typography-->
+    <p class="lead">Vote word by word to make the Best. Story. Ever...</p>
+    </div>
+</div>
+  <div class="row-fluid">
+    <div class="span video"> <!-- offset1 video"> -->
+      <img class="img" alt="self-writing gif" src="http://www.davidrynn.com/images/self-writing.gif" onload = "this.width/=2; this.onload=null;">
+<!--src="http://placehold.it/480x300">-->
+      </div>
+  </div>
+  <div class="row-fluid"> I have wanted to build a start-up for a while and a friend recommended that I take this <a href="https://class.coursera.org/startup-001/class/index">online class on Start Engineering</a> taught through Stanford and offered as a free online class through <a href="https://www.coursera.org">Coursera.</a>  And viola!  The first of hopefully many fun ideas I can actually put to use.  Thanks for looking!  -David 
+
+
+</div>
+
+<!-- Not crucial, but we pout this under a CC By-SA 3.0 license. -->
+<!-- http://creativecommons.org/licenses/ -->
+<div class="row fluid footers">
+  <div class="span12">
+    <p>This work is licensed under
+      the <a href="http://creativecommons.org/licenses/by-sa/3.0">CC
+	By-SA 3.0
+      </a>, without all the fruft that would otherwise be
+      put at the bottom of the page.</p>
+  </div>
+</div>
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r,i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga ('create', 'UA-43000023-1' , 'wordatic.com'); ga('send', 'pageview');
+</script>
+
+
+
+</body>
+</html>
