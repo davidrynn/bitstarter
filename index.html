@@ -99,6 +99,11 @@ clear: none;
 
 
 /* Main body and headings */
+.row-fluid .span1{
+line-height:normal;
+width:auto;
+}
+
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	
@@ -210,7 +215,7 @@ return s;
 }
 console.log("this.print:" + this.print);
 }
-*/
+
 var sentence =[];
 console.log("Sentence is this long: " + sentence.length);
 window.onload = init;
@@ -383,32 +388,20 @@ sentence.appendChild(li);
 	</div>
 </div><!-- end of story builder->
 -->
-
-<!-- test of grid -->
-<div class="row">
-  <div class = "span12">
-    Level 1 column
-    <div class="row">
-      <div class="span6">Level 2</div>
-      <div class="span6">Level 2</div>
-    </div>
-  </div>
-</div>
+<!--demo sentence-->
 <div class="row-fluid">
   <div class="span12">
 
 <div class="row-fluid">
   <div class="span7">
 
-<div class="row-fluid">
+<div class="row-fluid ">
       <div class="span1 myText">
 <i class="icon-caret-up"></i>He
 	<div class="row-fluid">
-	  <div class="span12">
 	    <div class="row-fluid">
 	      <div class="row-fluid">
 	      </div>
-	    </div>
 	  </div>
 	</div>
       </div>
@@ -416,10 +409,8 @@ sentence.appendChild(li);
       <div class="span1">
 	<i class="icon-caret-up"></i>was
 	<div class="row-fluid">
-	  <div class="span12">
 	    <div class="row-fluid">
 	      <div class="row-fluid">
-	      </div>
 	    </div>
 	  </div>
 	</div>
@@ -428,10 +419,8 @@ sentence.appendChild(li);
       <div class="span1">
  	<i class="icon-caret-up"></i>often
 	<div class="row-fluid">
-	  <div class="span12">
 	    <div class="row-fluid">
 	      <div class="row-fluid">
-	      </div>
 	    </div>
 	  </div>
 	</div>
@@ -440,11 +429,9 @@ sentence.appendChild(li);
       <div class="span1">
 	<i class="icon-caret-up"></i>cranky
 	<div class="row-fluid">
-	  <div class="span12">
 	    <div class="row-fluid">
 	      <div class="row-fluid">
 	      </div>
-	    </div>
 	  </div>
 	</div>
       </div>
@@ -452,12 +439,10 @@ sentence.appendChild(li);
       <div class="span1">
  	<i class="icon-caret-up"></i>but
 	<div class="row-fluid">
-	  <div class="span12">
 +and
 	    <div class="row-fluid">
 	      <div class="row-fluid">
 	      </div>
-	    </div>
 	  </div>
 	</div>
       </div>
@@ -465,10 +450,8 @@ sentence.appendChild(li);
       <div class="span1">
 	<i class="icon-caret-up"></i>generally
 	<div class="row-fluid">
-	  <div class="span12">
 	    <div class="row-fluid">
-	      <div class="span12">
-	      </div>
+	      <div class="row-fluid">
 	    </div>
 	  </div>
 	</div>
@@ -478,13 +461,11 @@ sentence.appendChild(li);
       <div class="span1">
 	<i class="icon-caret-up"></i>well-liked.
 	<div class="row-fluid">
-	  <div class="span12">
 	    +competent
 	    <div class="row-fluid">
-	      <div class="span12">
+	      <div class="row-fluid">
 		+unpleasant
 	      </div>
-	    </div>
 	  </div>
 	</div>
       </div>
@@ -540,7 +521,7 @@ sentence.appendChild(li);
 	   villages, burn things for no particular reason and fly all over the place.
 	   </span><span  class="hover">He was also only ten feet long and couldn't fly so much as glide.  </span><span  class="hover">He was
 	   called Shoe because he was only a little bit bigger than Grandpa Ned's left
-	   foot, about the size of his foot if he wore a shoe.  </span><span  class="hover">One night, as she was pleasantly dreaming about his favorite teddy bear, he was awoken by a loud  ...</span></p>
+	   foot, about the size of his foot if he wore a shoe.  </span><span  class="hover">One night, as Shoe was pleasantly dreaming about his favorite teddy bear, he was awoken by a loud  ...</span></p>
     </div><!-- end of text para -->
 </div><!-- end of fluid row text-->
     <!-- end of my section -->
