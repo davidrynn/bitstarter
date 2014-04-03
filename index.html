@@ -283,13 +283,13 @@ margin: 0 auto;
 	      	<div class="row">
 	<!-- Bootstrap table/container for story and editor-->
 
-	      		<div class="story col-md-12"><h1>Our story so far:</h1><br />Click on a highlighted sentence to edit it:
+	      		<div class="story col-md-12"><h1>Our story so far:</h1><br /><b>First, click on a sentence to edit it:</b>
 					<div class="well" id="story">
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class ="col-md-12 editor wellHeader">Click on word to edit:
+				<div class ="col-md-12 editor wellHeader"><b>Next, click on word below to edit it.  When you're done editing the sentence, place the entire sentence in the story:</b>
 					<div class="well">
 						<div id="sentence"><br />
 						</div>
@@ -300,13 +300,9 @@ margin: 0 auto;
 								<label for="word"> Type new word: </label>
 								<input id="words1" type="text" size="15" required>
 								<br>
-								<input type="button" id="submitButton" value="Insert Word"><br>
-								<input type="button" id="resetButton" align="left" value="reset"><br>
+								<input type="button" id="submitButton" value="Replace Word">
+								<input type="button" id="saveButton" style="float:right" value="Put Sentence in Story"><br>
 							</form>
-<!--							<ul id="sentence1">
-							</ul>
-
-							<div id="result"></div> -->
 
 						</div>
 					</div>
@@ -334,9 +330,7 @@ margin: 0 auto;
 			  </div>
 			<div id="collapseOne" class="accordion-body collapse">
 			  <div class="accordion-inner">
-			    It's a way to make a story word by word.<br>
-			    Anyone can add a word and the community votes on which word is best<br>
-			    and poof!  -That word is added to the story!
+			    Though it's still being developed, it's meant to be a social game where anyone gets to add words to a story, one word at a time.  Anyone can edit, add or vote for a word and once it get's enough votes from the community it officially becomes part of the story.			    
 			    </div>
 			  </div>
 			</div>
@@ -349,7 +343,7 @@ margin: 0 auto;
 			  </div>
 			<div id="collapseTwo" class="accordion-body collapse">
 			  <div class="accordion-inner">
-			    Because every other name is taken. Yey!
+			    Because every other name is taken. Yey!  Tic is kinda related to voting...kinda...
 			    </div>
 			</div>
 		      </div>
@@ -382,13 +376,16 @@ margin: 0 auto;
 	//here's what will eventually be JSON
 	var storyWords = ["Once","upon","a","time","there","was","a","gallant","knight","named","Sherman",".","He","was","riding","his","horse",",","Mr.Tinklewart",",","to","the","castle","of","Lord","Wortweed",".","Lord","Wortweed","had stolen","Sherman's","favorite","baseball","card,","not","to","mention","Snilchweed","had","imprisoned","Princess","Gertrude","."];
 	//variable to hold index number of clicked word
-	var wordIndex;
+	var indexWord;
 	var numSent;
 	var indexSent;
 
 	var sentence =[];
-	// use 'sentences' to store sentences for editing
+	// use 'sentences' to store sentences elements for editing
 		var sentences =[];
+		var sentArray=[];
+		//no this is the sentence without elements
+		var wordArray=[];
 
 
 //jquery 
@@ -403,32 +400,31 @@ $(document).on('click', '.hover', function(e){
 	faderToggle(this, sentences, indexSent);
 	var phrase = $(this).html();
 	//clears sentence
-	$('#sentence').replaceWith('<div class="story" id="sentence"></div><br');
 
 	var phraseArray=phrase.split(" ");
+	wordArray=phraseArray;
 	var phraseLength=phraseArray.length;
 	//clears word before new sentence placed
 	$('#words').replaceWith('<div id="words"></div>');
 
 	fillSentence(phraseArray);
-/*	//adds sentence to editor 
-	for (var j=0; j<phraseLength; j++){
-		//now add phraseLength number of divs each with a word
-		$('#sentence').append("<span class='wordHover' id=a"+j+">"+phraseArray[j]+" "+"</span>");
-	}
-*/	
+
 });
 
 //adds clicked on word into focus
 $(document).on('click', '.wordHover', function(e){
 	//once word is clicked show input
 	$('#inputForm').css({opacity:1});
+		console.log("1 Sentence is this long: " + sentence.length);
+
 	//set index point of array so can edit later...
 	indexWord=sentence.indexOf(this);
+	console.log("indexW at beg: "+indexWord);
 	// ... and send to fader
 	faderToggle(this, sentence, indexWord);
 	
 	var wordEdit = $(this).html();
+
 	//now single out word and show in div
 	$('#words').replaceWith('<div class="words" id="words">' + wordEdit + '</div>');
 
@@ -440,23 +436,21 @@ $(document).on('click', '.wordHover', function(e){
 //beginning of Javascript
 
 
-		console.log("Sentence is this long: " + sentence.length);
+		console.log("2 Sentence is this long: " + sentence.length);
 
 		window.onload = init;
 
 		function init(){
 			var submitButton = document.getElementById("submitButton");
 			submitButton.onclick = getWord;
-			var resetButton = document.getElementById("resetButton");
-//			resetButton.onclick = clearAll;
-			storyBuilder();
+			initStory();
+			saveButton.onclick = saveSentence;
 		}
 
 		//storyBuilder function builds the "story" from the array storyWords(eventually JSON);
-		function storyBuilder(){
-			$()
+		function initStory(){
+			$('#story').replaceWith('<div class="well" id="story"></div>');
 			var story = document.getElementById("story");
-			console.log(storyWords.length);
 
 			//index number of where sentences break
 			var periods=[];
@@ -482,10 +476,12 @@ $(document).on('click', '.wordHover', function(e){
 			for (var k=0;k<count;k++){
 
 				var spanHover=document.createElement('span');
+				var sent;
 				spanHover.setAttribute('class','hover');
 				sentences.push(spanHover);
 				story.appendChild(spanHover);
 				console.log(sentences[k]);
+				sentArray.push(sent);
 
 				if(k===0){
 					var j=0;
@@ -493,12 +489,22 @@ $(document).on('click', '.wordHover', function(e){
 					j=(periods[k-1])+1
 				}
 				for (j;j<=periods[k];j++){
-					spanHover.innerHTML+=" "+ storyWords[j];				
+					spanHover.innerHTML+=" "+ storyWords[j];
 				};
 
 			};
-			fillStory();
+			fillStory(sentences);
 		}//end of storyBuilder
+
+
+
+		//actually appends story element with sentences
+		function fillStory (arr){
+				story.length=0;
+				for (var l=0;l<arr.length;l++){
+				story.appendChild(arr[l]);
+			}
+		}
 
 		//changes font style for selected element
 		function faderToggle(e, arry, indx){
@@ -514,32 +520,48 @@ $(document).on('click', '.wordHover', function(e){
 		}
 
 
-
-		//actually appends story element with sentences
-		function fillStory (){
-				for (var l=0;l<sentences.length;l++){
-				story.appendChild(sentences[l]);
-			}
-		}
-
-
 		function fillSentence(arry){
+				$('#sentence').replaceWith('<div class="story" id="sentence"></div><br');
+			sentence.length=0;
 			var sent=document.getElementById('sentence');
 			for (var i=0;i<arry.length;i++) {
-			var spanWords=document.createElement('span');
-			spanWords.setAttribute('class','wordHover');
-			spanWords.innerHTML+=" " + arry[i];
-			sentence.push(spanWords);
-			sent.appendChild(spanWords);
-};
+				var spanWords=document.createElement('span');
+				spanWords.setAttribute('class','wordHover');
+				spanWords.innerHTML+=" " + arry[i];
+				sentence.push(spanWords);
+				sent.appendChild(spanWords);
+			};
 
 		}
+
+
 
 		function clearAll(){
 		sentence.length = 0;
 		var result =document.getElementById("result");
 		result.innerHTML =" ";
 		}
+
+		function saveSentence(){
+			console.log(indexSent);
+			$('#story').replaceWith('<div class="well" id="story"></div>');
+
+			//place altered wordArray into elements:
+			var spanHover=document.createElement('span');
+			spanHover.setAttribute('class','hover');
+			//place word-by-word in between spans
+			for (var i=0;i<wordArray.length;i++){
+				spanHover.innerHTML+=" "+ wordArray[i];
+			};
+			//now but the new minted element into sentences Array
+			sentences[indexSent]=spanHover;
+			//re-populate story with altered sentence...?
+			fillStory(sentences);
+			console.log("sentences array length: " +sentences.length);
+				
+		}
+
+
 
 		function getWord(){
 			var wordInput = document.getElementById("words1");
@@ -553,22 +575,16 @@ $(document).on('click', '.wordHover', function(e){
 
 				var result = document.getElementById("words");
 				result.innerHTML =word;
-	
-			sentence[wordIndex]='<div class="story" id="sentence">'+word+</div>;
-
-				resultSent=document.getElementById("sentence");
-//TO
-
+				wordArray[indexWord]=word.trim();
 				var theForm = document.getElementById("theForm");
 				theForm.reset();
 				//clear after reset
-				$('#sentence').replaceWith('<div class="story" id="sentence"></div>');
-				$('#sentence').append(sentence);
-//				$('#story').replaceWith('<div class="well" id="story"></div>');
+
+				$('#sentence').replaceWith('<div class="story" id="sentence"></div><br');
 
 
-
-				storyBuilder();
+//				fillStory(sentences);
+				fillSentence(wordArray);
 
 			}
 		}
