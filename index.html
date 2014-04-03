@@ -113,6 +113,15 @@ body {
 
 	background-color:LightGray;
 	}
+
+.wellHeader {
+	margin-top:5px;
+}
+
+.words {
+	font-size:20px;
+}
+
 .heading, .subheading {
 font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 text-align: center;
@@ -132,12 +141,7 @@ line-height:24px;
 font-size:20px;
 }
 
-.story {
-overflow-y: auto;
-max-height:250px;
-min-height:50px;
 
-}
 /* Video pitch and Action */
 
 .order{
@@ -271,119 +275,45 @@ margin: 0 auto;
 	    </div>
 	</div>
 	<div class="row">
-	    <div class="col-md-12 video media"> <!-- offset1 video"> -->
+	    <div class="col-md-6 video media"> <!-- offset1 video"> -->
 	      <img class="img" alt="self-writing gif" src="http://www.davidrynn.com/images/self-writing.gif" ><!--onload = "this.width/=2; this.onload=null;">-->
 	<!--src="http://placehold.it/480x300">-->
-	      </div>
-	</div>
-    
-</div>
-
-
-
-
-
-
-
+    	</div>
+      	<div class="story col-md-6">
+	      	<div class="row">
 	<!-- Bootstrap table/container for story and editor-->
 
-	<div class="row">
-		<div class ="col-md-7 editor">Click on word to edit:
-			<div class="well">					      						<div id="sentence"><br /></div>
-				<div id="words"><br /></div>
-				<div>
-					<form id = "theForm">
-						<label for="word"> Type new word: </label>
-						<input id="words1" type="text" size="15" required>
-						<br>
-						<input type="button" id="submitButton" value="Novelize!"><br>
-						<input type="button" id="resetButton" align="left" value="reset"><br>
-					</form>
-					<ul id="sentence1">
-					</ul>
+	      		<div class="story col-md-12"><h1>Our story so far:</h1><br />Click on a highlighted sentence to edit it:
+					<div class="well" id="story">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class ="col-md-12 editor wellHeader">Click on word to edit:
+					<div class="well">
+						<div id="sentence"><br />
+						</div>
+						<div id="words"><br />
+						</div>
+						<div id="inputForm" style="opacity:0">
+							<form id = "theForm">
+								<label for="word"> Type new word: </label>
+								<input id="words1" type="text" size="15" required>
+								<br>
+								<input type="button" id="submitButton" value="Insert Word"><br>
+								<input type="button" id="resetButton" align="left" value="reset"><br>
+							</form>
+<!--							<ul id="sentence1">
+							</ul>
 
-					<div id="result"></div>
+							<div id="result"></div> -->
 
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="story col-md-5">Click on sentence to edit:
-			<div class="well" id="story">
-			</div>
-		</div>
-	</div>
 
-
-
-<!-- We define a new 'actions' div to conatin statistic, order, and share buttons.-->
-<div class = "actions offset4">
-	<div class="row">
-		<div class="col-md-8 offset2">
-	  		<div class="row statistics">
-	    		<div class="col-md-4">
-	    <!-- linediv-l and linediv-r give dividing lines that look
-		 different in horizontal and vertical layouts, illustrating 
-		 media queries-->
-	    			<div class="linediv-l">
-	      				<h3>0</h3><p>backers</p>
-	    			</div>
-	    		</div>
-		    	<div class="col-md-4">
-		    		<div class="linediv-c">
-						<h3>$5</h3><p> of $120</p>
-		      		</div>
-		    	</div>
-			    <div class="col-md-4">
-			    	<div class="linediv-r">
-						<h3>60</h3><p>days left</p>
-			      	</div>
-			    </div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-10 offset1">
-			  <!-- Bootstrap progress bar -->
-			  <!--http://twitter.github.io/bootstrap/components.html#progress-->
-			  	<div class="thermometer progress active">
-			    	<div class="bar bar-success" style="width: 4%;">
-			    	</div>
-			    	<div class="bar bar-warning" style="width: 96%;">
-			    	</div>
-			  	</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-6 offset3 order">
-		<!-- Standard Bootstrap button. -->
-		<!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
-		<!--bitcoin purchase-->
-					<a class="coinbase-button" data-code="be74b21e2474f16cd37c9a96da987055" 
-		 		href="https://coinbase.com/checkouts/be74b21e2474f16cd37c9a96da987055">Pay With Bitcoin</a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-8 offset2 social">
-	  <!-- Social buttons are not includedin default Bootstrap.-->
-	  <!-- See: htp://noizwaves.github.io/bootstrap-social-buttons-->
-	  <!-- AddThis button BEGIN -->
-	  			<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-			 	    <a class="addthis_button_preferred_1"></a>
-				    <a class="addthis_button_preferred_2"></a>
-			<!--	    <a class="addthis_button_preferred_3"></a> -->
-			<!--	    <a class="addthis_button_preferred_4"></a> -->
-				    <a class="addthis_button_compact"></a>
-				    <a class="addthis_counter addthis_bubble_style"></a>
-				</div>
-			 	  <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-			 	  <script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52010aef54589938"></script>
-
-	  <!-- AddThis Button END -->
-
-			</div>
-		</div>
-  	</div>
-</div>
 
 
 <!-- For the FAQ, we introduce a little bit of JS, using the accordian. -->
@@ -391,65 +321,75 @@ margin: 0 auto;
 <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
 
 
-<div class="row faq">
-  <div class="col-md-10 offset1">
-    <h3>FAQ</h3>
-    <div class="accordion" id="accordion2">
-      <div class="accordion-group">
-	<div class="accordion-heading">
-	  <a class="accordion-toggle" data-toggle="collapse"
-	     data-parent="#accordion2" href="#collapseOne">
-	    What's Wordatik?
-	    </a>
-	  </div>
-	<div id="collapseOne" class="accordion-body collapse">
-	  <div class="accordion-inner">
-	    It's a way to make a story word by word.<br>
-	    Anyone can add a word and the community votes on which word is best<br>
-	    and poof!  -That word is added to the story!
-	    </div>
-	  </div>
+		<div class="row faq">
+		  <div class="col-md-10 ">
+		    <h3>FAQ</h3>
+		    <div class="accordion" id="accordion2">
+		      <div class="accordion-group">
+			<div class="accordion-heading">
+			  <a class="accordion-toggle" data-toggle="collapse"
+			     data-parent="#accordion2" href="#collapseOne">
+			    What's Wordatik?
+			    </a>
+			  </div>
+			<div id="collapseOne" class="accordion-body collapse">
+			  <div class="accordion-inner">
+			    It's a way to make a story word by word.<br>
+			    Anyone can add a word and the community votes on which word is best<br>
+			    and poof!  -That word is added to the story!
+			    </div>
+			  </div>
+			</div>
+		      <div class="accordion-group">
+			<div class="accordion-heading">
+			  <a class="accordion-toggle" data-toggle="collapse"
+			     data-parent="#accordion2" href="#collapseTwo">
+			    Why does it have such a stupid name?
+			    </a>
+			  </div>
+			<div id="collapseTwo" class="accordion-body collapse">
+			  <div class="accordion-inner">
+			    Because every other name is taken. Yey!
+			    </div>
+			</div>
+		      </div>
+		    </div>
+		  </div>
+
+		</div>
+
+		<!-- Not crucial, but we pout this under a CC By-SA 3.0 license. -->
+		<!-- http://creativecommons.org/licenses/ -->
+		<div class="row footers">
+		  	<div class="col-md-12">
+		    	<p>This work is licensed under
+		      the <a href="http://creativecommons.org/licenses/by-sa/3.0">CC
+			By-SA 3.0
+		      </a>, without all the fruft that would otherwise be
+		      put at the bottom of the page.</p>
+		  	</div>
+		</div>
+
+
 	</div>
-      <div class="accordion-group">
-	<div class="accordion-heading">
-	  <a class="accordion-toggle" data-toggle="collapse"
-	     data-parent="#accordion2" href="#collapseTwo">
-	    Why does it have such a stupid name?
-	    </a>
-	  </div>
-	<div id="collapseTwo" class="accordion-body collapse">
-	  <div class="accordion-inner">
-	    Because every other name is taken. Yey!
-	    </div>
-	</div>
-      </div>
-    </div>
-  </div>
-
 </div>
-
-<!-- Not crucial, but we pout this under a CC By-SA 3.0 license. -->
-<!-- http://creativecommons.org/licenses/ -->
-<div class="row footers">
-  	<div class="col-md-12">
-    	<p>This work is licensed under
-      the <a href="http://creativecommons.org/licenses/by-sa/3.0">CC
-	By-SA 3.0
-      </a>, without all the fruft that would otherwise be
-      put at the bottom of the page.</p>
-  	</div>
-</div>
-
-
-
 
 
 <script>
+/*-----------------------------------------------*/
+//Global Variabels
 
-		//here's what will eventually be JSON
-		var storyWords = ["Once","upon","a","time","there","were","three","dragons","living","together","in","a","big","cave",".","They","were","siblings",".","Humphrey","was","the","oldest",".","He","was","cranky","but","well-liked","kinda","."];
-		//variable to hold index number of clicked word
-		var wordIndex;
+	//here's what will eventually be JSON
+	var storyWords = ["Once","upon","a","time","there","was","a","gallant","knight","named","Sherman",".","He","was","riding","his","horse",",","Mr.Tinklewart",",","to","the","castle","of","Lord","Wortweed",".","Lord","Wortweed","had stolen","Sherman's","favorite","baseball","card,","not","to","mention","Snilchweed","had","imprisoned","Princess","Gertrude","."];
+	//variable to hold index number of clicked word
+	var wordIndex;
+	var numSent;
+	var indexSent;
+
+	var sentence =[];
+	// use 'sentences' to store sentences for editing
+		var sentences =[];
+
 
 //jquery 
 
@@ -459,28 +399,38 @@ margin: 0 auto;
 
 
 $(document).on('click', '.hover', function(e){
+	indexSent=sentences.indexOf(this);
+	faderToggle(this, sentences, indexSent);
 	var phrase = $(this).html();
 	//clears sentence
 	$('#sentence').replaceWith('<div class="story" id="sentence"></div><br');
 
-	//adds sentence to editor 
 	var phraseArray=phrase.split(" ");
 	var phraseLength=phraseArray.length;
 	//clears word before new sentence placed
-	$('#words').replaceWith('<div class="copy-left" id="words"></div>');
+	$('#words').replaceWith('<div id="words"></div>');
 
+	fillSentence(phraseArray);
+/*	//adds sentence to editor 
 	for (var j=0; j<phraseLength; j++){
 		//now add phraseLength number of divs each with a word
 		$('#sentence').append("<span class='wordHover' id=a"+j+">"+phraseArray[j]+" "+"</span>");
 	}
-
+*/	
 });
 
 //adds clicked on word into focus
 $(document).on('click', '.wordHover', function(e){
+	//once word is clicked show input
+	$('#inputForm').css({opacity:1});
+	//set index point of array so can edit later...
+	indexWord=sentence.indexOf(this);
+	// ... and send to fader
+	faderToggle(this, sentence, indexWord);
+	
 	var wordEdit = $(this).html();
-	wordIndex=storyWords.indexOf(wordEdit.trim());
-	$('#words').replaceWith('<div class="copy-left" id="words">' + wordEdit + '</div>');
+	//now single out word and show in div
+	$('#words').replaceWith('<div class="words" id="words">' + wordEdit + '</div>');
 
 
 });
@@ -490,9 +440,6 @@ $(document).on('click', '.wordHover', function(e){
 //beginning of Javascript
 
 
-		var sentence =[];
-		//possibly goint to use 'sentences' to store sentences for editing
-		var sentences =[];
 		console.log("Sentence is this long: " + sentence.length);
 
 		window.onload = init;
@@ -501,16 +448,23 @@ $(document).on('click', '.wordHover', function(e){
 			var submitButton = document.getElementById("submitButton");
 			submitButton.onclick = getWord;
 			var resetButton = document.getElementById("resetButton");
-			resetButton.onclick = clearAll;
+//			resetButton.onclick = clearAll;
 			storyBuilder();
 		}
 
 		//storyBuilder function builds the "story" from the array storyWords(eventually JSON);
 		function storyBuilder(){
+			$()
 			var story = document.getElementById("story");
 			console.log(storyWords.length);
+
+			//index number of where sentences break
 			var periods=[];
+
+			//number of sentences
 			var count=0;
+			numSent=count;
+
 			//this for loop is used to figure the number of sentences and where they start/stop.
 			for (var i=0;i<storyWords.length;i++){
 
@@ -522,14 +476,16 @@ $(document).on('click', '.wordHover', function(e){
 				
 			};
 
-			/*these loops put spans with tags around the sentences and insert the spans 
+			/*these loops put spans with tags around the sentences then fillStory inserts the spans 
 			into the DOM alond with the words. 
 			*/
 			for (var k=0;k<count;k++){
 
 				var spanHover=document.createElement('span');
 				spanHover.setAttribute('class','hover');
+				sentences.push(spanHover);
 				story.appendChild(spanHover);
+				console.log(sentences[k]);
 
 				if(k===0){
 					var j=0;
@@ -537,12 +493,47 @@ $(document).on('click', '.wordHover', function(e){
 					j=(periods[k-1])+1
 				}
 				for (j;j<=periods[k];j++){
-					spanHover.innerHTML+=storyWords[j] + " ";				
+					spanHover.innerHTML+=" "+ storyWords[j];				
+				};
+
+			};
+			fillStory();
+		}//end of storyBuilder
+
+		//changes font style for selected element
+		function faderToggle(e, arry, indx){
+			var notSent=[];
+			$(e).css({opacity:1,'font-size':'16px'});
+			$(e).css({})
+			for (var i=0;i<arry.length;i++){
+				if(i!=indx){
+					console.log("loop worked");
+				$(arry[i]).css({opacity:0.5, 'font-size':'14px'});					
 				};
 			};
 		}
 
 
+
+		//actually appends story element with sentences
+		function fillStory (){
+				for (var l=0;l<sentences.length;l++){
+				story.appendChild(sentences[l]);
+			}
+		}
+
+
+		function fillSentence(arry){
+			var sent=document.getElementById('sentence');
+			for (var i=0;i<arry.length;i++) {
+			var spanWords=document.createElement('span');
+			spanWords.setAttribute('class','wordHover');
+			spanWords.innerHTML+=" " + arry[i];
+			sentence.push(spanWords);
+			sent.appendChild(spanWords);
+};
+
+		}
 
 		function clearAll(){
 		sentence.length = 0;
@@ -553,6 +544,7 @@ $(document).on('click', '.wordHover', function(e){
 		function getWord(){
 			var wordInput = document.getElementById("words1");
 			var word = wordInput.value;
+//TO DO make this so if use a space you delete the word
 			if (word == null || word =="") {
 				alert("Please enter a word");
 			return;
@@ -561,14 +553,18 @@ $(document).on('click', '.wordHover', function(e){
 
 				var result = document.getElementById("words");
 				result.innerHTML =word;
-				storyWords[wordIndex]=word;
+	
+			sentence[wordIndex]='<div class="story" id="sentence">'+word+</div>;
 
+				resultSent=document.getElementById("sentence");
+//TO
 
 				var theForm = document.getElementById("theForm");
 				theForm.reset();
 				//clear after reset
 				$('#sentence').replaceWith('<div class="story" id="sentence"></div>');
-				$('#story').replaceWith('<div class="well" id="story"></div>');
+				$('#sentence').append(sentence);
+//				$('#story').replaceWith('<div class="well" id="story"></div>');
 
 
 
